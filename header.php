@@ -24,23 +24,34 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" data-aos="fade-down" data-aos-delay="500">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">Papers</a>
+			<a class="navbar-brand d-flex align-items-center" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img class="p-1" src="<?php assets('images/eae.png') ?>" alt="" height="50">
+				<div class="p-2 d-none d-sm-block">
+					Escuela<br>
+					Agrotecnica Eldorado
+				</div>
+			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav ml-auto">
-				<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-				<li class="nav-item"><a href="services.html" class="nav-link">What We Do</a></li>
-				<li class="nav-item"><a href="blog.html" class="nav-link">The Journal</a></li>
-				<li class="nav-item"><a href="about.html" class="nav-link">Who We Are</a></li>
-				<li class="nav-item"><a href="pricing.html" class="nav-link">Plans &amp; Pricing</a></li>
-				<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-				</ul>
-			</div>
+			<?php
+				if ( has_nav_menu( 'primary' ) ) :
+					wp_nav_menu(
+						array(
+							'container'       => 'div',
+							'container_class' => 'collapse navbar-collapse',
+							'container_id'    => 'ftco-nav',
+							'theme_location'  => 'primary',
+							'menu_id'         => 'primary-menu',
+							'menu_class'      => 'navbar-nav ml-auto',
+							'walker'          => new Awps\Core\WalkerNav(),
+							)
+						);
+				endif;
+			?>
 		</div>
 	</nav>
 
-	<header class="ftco-cover" style="background-image: url(wp-content/uploads/2019/03/bg_1.jpg);" id="section-home" data-aos="fade"  data-stellar-background-ratio="0.5">
+	<!--<header class="ftco-cover" style="background-image: url(<?php echo esc_url( assets( 'images/bg.jpg' ) ); ?>);" id="section-home" data-aos="fade"  data-stellar-background-ratio="0.5">-->
 		

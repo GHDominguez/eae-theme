@@ -195,7 +195,8 @@ h1, h2, h3, h4, h5,
 
 .navbar-brand {
 	text-transform: uppercase;
-	letter-spacing: .1em;
+	letter-spacing: .1rem;
+	line-height: 1.2;
 }
 
 
@@ -288,17 +289,17 @@ h1, h2, h3, h4, h5,
 .ftco-uppercase {
 	font-size: 30px;
 }
-.menu-item {
-	margin-bottom: 30px;
-	img {
-		width: 100px;
-		border-radius: 50%;
-	}
-	.menu-price {
+// .menu-item {
+// 	margin-bottom: 30px;
+// 	img {
+// 		width: 100px;
+// 		border-radius: 50%;
+// 	}
+// 	.menu-price {
 
-		font-size: 24px;
-	}
-}
+// 		font-size: 24px;
+// 	}
+// }
 
 .display-4 {
 	@include media-breakpoint-down(md) {

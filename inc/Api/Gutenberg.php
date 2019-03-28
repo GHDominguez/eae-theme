@@ -78,10 +78,14 @@ class Gutenberg
 	 */
 	public function gutenberg_enqueue()
 	{
-		wp_register_script( 'gutenberg-awps', get_template_directory_uri() . '/assets/dist/js/gutenberg.js', array( 'wp-blocks', 'wp-element', 'wp-editor' ) );
+		wp_register_script( 'gutenberg-eae', get_template_directory_uri() . '/assets/dist/js/gutenberg.js', array( 'wp-blocks', 'wp-element', 'wp-editor' ) );
 
-		register_block_type( 'gutenberg-awps/awps-cta', array(
-			'editor_script' => 'gutenberg-awps', // Load script in the editor
+		register_block_type( 'gutenberg-eae/eae-cta', array(
+			'editor_script' => 'gutenberg-eae', // Load script in the editor
+		) );
+
+		register_block_type( 'gutenberg-eae/eae-hero-phrase', array(
+			'editor_script' => 'gutenberg-eae', // Load script in the editor
 		) );
 	}
 
@@ -91,6 +95,6 @@ class Gutenberg
 	 */
 	public function gutenberg_assets()
 	{
-		wp_enqueue_style( 'gutenberg-awps-cta', get_template_directory_uri() . '/assets/dist/css/gutenberg.css', null );
+		wp_enqueue_style( 'gutenberg-eae-cta', get_template_directory_uri() . '/assets/dist/css/gutenberg.css', null );
 	}
 }

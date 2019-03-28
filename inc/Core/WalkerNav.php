@@ -31,6 +31,7 @@ class WalkerNav extends Walker_Nav_Menu
         $classes[] = ($args->has_children) ? 'dropdown' : '';
         $classes[] = ($item->current || $item->current_item_ancestor) ? 'active' : '';
         $classes[] = 'menu-item-'.$item->ID;
+        $classes[] = 'nav-item';
         if ($depth && $args->has_children) {
             $classes[] = 'dropdown-submenu';
         }
@@ -42,11 +43,12 @@ class WalkerNav extends Walker_Nav_Menu
         $id = strlen($id) ? ' id="'.esc_attr($id).'"' : '';
 
         $output .= $indent.'<li'.$id.$value.$class_names.$li_attributes.'>';
-
+        
         $attributes = !empty($item->attr_title) ? ' title="'.esc_attr($item->attr_title).'"' : '';
         $attributes .= !empty($item->target) ? ' target="'.esc_attr($item->target).'"' : '';
         $attributes .= !empty($item->xfn) ? ' rel="'.esc_attr($item->xfn).'"' : '';
         $attributes .= !empty($item->url) ? ' href="'.esc_attr($item->url).'"' : '';
+        $attributes .= ' class="nav-link"';
         $attributes .= ($args->has_children) ? ' class="dropdown-toggle" data-toggle="dropdown"' : '';
 
         $item_output = $args->before;
