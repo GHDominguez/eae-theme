@@ -78,7 +78,7 @@ class Gutenberg
 	 */
 	public function gutenberg_enqueue()
 	{
-		wp_register_script( 'gutenberg-eae', get_template_directory_uri() . '/assets/dist/js/gutenberg.js', array( 'wp-blocks', 'wp-element', 'wp-editor' ) );
+		wp_register_script( 'gutenberg-eae', get_template_directory_uri() . '/assets/dist/js/gutenberg.js', array( 'wp-blocks', 'wp-element', 'wp-editor', 'wp-data' ) );
 
 		register_block_type( 'gutenberg-eae/eae-cta', array(
 			'editor_script' => 'gutenberg-eae', // Load script in the editor
@@ -87,6 +87,29 @@ class Gutenberg
 		register_block_type( 'gutenberg-eae/eae-hero-phrase', array(
 			'editor_script' => 'gutenberg-eae', // Load script in the editor
 		) );
+
+		register_block_type( 'eae/latest-posts', array(
+			'render_callback' => array( $this, 'eae_render_block_latest_posts' ),
+		) );
+	}
+
+	public function eae_render_block_latest_posts( $attr, $content )
+	{
+		dd($attr, $content);
+		// $recent_posts = wp_get_recent_posts( array(
+		// 	'numberposts' => 1,
+		// 	'post_status' => 'publish',
+		// ) );
+		// if ( count( $recent_posts ) === 0 ) {
+		// 	return 'No posts';
+		// }
+		// $post = $recent_posts[ 0 ];
+		// $post_id = $post[ 'ID' ];
+		// return sprintf(
+		// 	'<a class="wp-block-awps-latest-post" href="%1$s">%2$s</a>',
+		// 	esc_url( get_permalink( $post_id ) ),
+		// 	esc_html( get_the_title( $post_id ) )
+		// );
 	}
 
 	/**

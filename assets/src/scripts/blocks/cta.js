@@ -1,15 +1,12 @@
 const { registerBlockType } = wp.blocks;
-const { Fragment } = wp.element;
 const {
-  PlainText,
   RichText,
   MediaUpload,
   BlockControls,
   InspectorControls,
-  ColorPalette,
   getColorClass
 } = wp.editor;
-const { IconButton, RangeControl, PanelBody } = wp.components;
+const { IconButton, PanelBody } = wp.components;
 
 registerBlockType("gutenberg-awps/awps-cta", {
   title: "Encabezado grande",
