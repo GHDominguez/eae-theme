@@ -47,7 +47,7 @@ registerBlockType("gutenberg-awps/awps-cta", {
 
     return [
       <InspectorControls style={{ marginBottom: "40px" }}>
-        <PanelBody title={"Background Image Settings"}>
+        <PanelBody title={"Opciones de Imagen de fondo"}>
           <p>
             <strong>Seleccionar una imagen de fondo:</strong>
           </p>

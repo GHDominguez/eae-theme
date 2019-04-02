@@ -1,0 +1,16 @@
+.mblocks-main-container {
+    font-family: $font-sans;
+    display: flex;
+    flex-direction: column;
+    .mblocks-container {
+        display: flex;
+        .mblock {
+            flex-grow: 1;
+        }
+        .mblock-text {
+            width: 60%;
+            align-self: center;
+            padding: 2rem;
+        }
+    }
+}

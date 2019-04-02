@@ -8,12 +8,13 @@ registerBlockType("eae/latest-posts", {
 
   attributes: {
     title: {
-      type: "string"
+      type: "string",
+      source: "meta",
+      meta: "latest_posts_meta_block_field"
     }
   },
 
   edit({ attributes, className, setAttributes }) {
-    console.log(attributes);
     const { title } = attributes;
 
     function onChangeTitle(newTitle) {
@@ -22,15 +23,15 @@ registerBlockType("eae/latest-posts", {
 
     return (
       <div className={`lp-container ${className}`}>
-        <h3 className="lp-title">Noticias</h3>
-        {/* <RichText
+        {/* <h3 className="lp-title">Noticias</h3> */}
+        <RichText
           key="editable"
           tagName="h3"
           className="lp-title"
           placeholder="Título sección"
           onChange={onChangeTitle}
           value={title}
-        /> */}
+        />
         <div className="lp-row">
           <div className="lt-col-3">
             <h4 className="lt-heading">Titulo</h4>

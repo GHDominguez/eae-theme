@@ -154,7 +154,7 @@ registerBlockType("gutenberg-awps/awps-cta", {
         marginBottom: "40px"
       }
     }, React.createElement(PanelBody, {
-      title: "Background Image Settings"
+      title: "Opciones de Imagen de fondo"
     }, React.createElement("p", null, React.createElement("strong", null, "Seleccionar una imagen de fondo:")), React.createElement(MediaUpload, {
       onSelect: onSelectImage,
       type: "image",
@@ -327,14 +327,15 @@ registerBlockType("eae/latest-posts", {
   category: "widgets",
   attributes: {
     title: {
-      type: "string"
+      type: "string",
+      source: "meta",
+      meta: "latest_posts_meta_block_field"
     }
   },
   edit: function edit(_ref) {
     var attributes = _ref.attributes,
         className = _ref.className,
         setAttributes = _ref.setAttributes;
-    console.log(attributes);
     var title = attributes.title;
 
     function onChangeTitle(newTitle) {
@@ -345,9 +346,14 @@ registerBlockType("eae/latest-posts", {
 
     return React.createElement("div", {
       className: "lp-container ".concat(className)
-    }, React.createElement("h3", {
-      className: "lp-title"
-    }, "Noticias"), React.createElement("div", {
+    }, React.createElement(RichText, {
+      key: "editable",
+      tagName: "h3",
+      className: "lp-title",
+      placeholder: "T\xEDtulo secci\xF3n",
+      onChange: onChangeTitle,
+      value: title
+    }), React.createElement("div", {
       className: "lp-row"
     }, React.createElement("div", {
       className: "lt-col-3"
@@ -376,6 +382,253 @@ registerBlockType("eae/latest-posts", {
 
 /***/ }),
 
+/***/ "./assets/src/scripts/blocks/media-blocks.js":
+/*!***************************************************!*\
+  !*** ./assets/src/scripts/blocks/media-blocks.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var registerBlockType = wp.blocks.registerBlockType;
+var _wp$editor = wp.editor,
+    RichText = _wp$editor.RichText,
+    MediaUpload = _wp$editor.MediaUpload,
+    BlockControls = _wp$editor.BlockControls,
+    InspectorControls = _wp$editor.InspectorControls,
+    getColorClass = _wp$editor.getColorClass;
+var _wp$components = wp.components,
+    IconButton = _wp$components.IconButton,
+    PanelBody = _wp$components.PanelBody;
+registerBlockType("eae/media-blocks", {
+  title: "Blockes multimedia",
+  icon: "format-image",
+  category: "layout",
+  attributes: {
+    titleTop: {
+      type: "string",
+      source: "html",
+      selector: "h3.top"
+    },
+    titleBottom: {
+      type: "string",
+      source: "html",
+      selector: "h3.bottom"
+    },
+    bodyTop: {
+      type: "string",
+      source: "html",
+      selector: "p.top"
+    },
+    bodyBottom: {
+      type: "string",
+      source: "html",
+      selector: "p.bottom"
+    },
+    imageTop: {
+      type: "string",
+      default: null
+    },
+    imageBottom: {
+      type: "string",
+      default: null
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        className = _ref.className,
+        setAttributes = _ref.setAttributes;
+    var titleTop = attributes.titleTop,
+        titleBottom = attributes.titleBottom,
+        bodyTop = attributes.bodyTop,
+        bodyBottom = attributes.bodyBottom,
+        imageTop = attributes.imageTop,
+        imageBottom = attributes.imageBottom;
+
+    function onSelectImageTop(newImage) {
+      setAttributes({
+        imageTop: newImage.sizes.full.url
+      });
+    }
+
+    function onSelectImageBottom(newImage) {
+      setAttributes({
+        imageBottom: newImage.sizes.full.url
+      });
+    }
+
+    function onChangeTitleTop(newTitle) {
+      setAttributes({
+        titleTop: newTitle
+      });
+    }
+
+    function onChangeTitleBottom(newTitle) {
+      setAttributes({
+        titleBottom: newTitle
+      });
+    }
+
+    function onChangeBodyTop(newBody) {
+      setAttributes({
+        bodyTop: newBody
+      });
+    }
+
+    function onChangeBodyBottom(newBody) {
+      setAttributes({
+        bodyBottom: newBody
+      });
+    }
+
+    return [React.createElement(InspectorControls, {
+      style: {
+        marginBottom: "40px"
+      }
+    }, React.createElement(PanelBody, {
+      title: "Imagen superior izquierda"
+    }, React.createElement("p", null, React.createElement("strong", null, "Seleccionar una imagen:")), React.createElement(MediaUpload, {
+      onSelect: onSelectImageTop,
+      type: "image",
+      value: imageTop,
+      render: function render(_ref2) {
+        var open = _ref2.open;
+        return React.createElement(IconButton, {
+          className: "editor-media-placeholder__button is-button is-default is-large",
+          icon: "upload",
+          onClick: open
+        }, "Imagen superior izquierda");
+      }
+    })), React.createElement(PanelBody, {
+      title: "Imagen inferior derecha"
+    }, React.createElement("p", null, React.createElement("strong", null, "Seleccionar una imagen:")), React.createElement(MediaUpload, {
+      onSelect: onSelectImageBottom,
+      type: "image",
+      value: imageBottom,
+      render: function render(_ref3) {
+        var open = _ref3.open;
+        return React.createElement(IconButton, {
+          className: "editor-media-placeholder__button is-button is-default is-large",
+          icon: "upload",
+          onClick: open
+        }, "Imagen inferior izquierda");
+      }
+    }))), React.createElement("div", {
+      className: "".concat(className, " mblocks-main-container")
+    }, React.createElement("div", {
+      className: "mblocks-top mblocks-container"
+    }, React.createElement("div", {
+      className: "mblocks-left mblock",
+      style: {
+        backgroundImage: "url(".concat(imageTop, ")"),
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }
+    }), React.createElement("div", {
+      className: "mblocks-right mblock mblock-text"
+    }, React.createElement(RichText, {
+      key: "editable",
+      tagName: "h3",
+      placeholder: "T\xEDtulo",
+      onChange: onChangeTitleTop,
+      value: titleTop
+    }), React.createElement(RichText, {
+      key: "editable",
+      tagName: "p",
+      placeholder: "descripci\xF3n",
+      onChange: onChangeBodyTop,
+      value: bodyTop
+    }))), React.createElement("div", {
+      className: "mblockslocks-bottom mblocks-container"
+    }, React.createElement("div", {
+      className: "mblocks-left mblock mblock-text"
+    }, React.createElement(RichText, {
+      key: "editable",
+      tagName: "h3",
+      placeholder: "T\xEDtulo",
+      onChange: onChangeTitleBottom,
+      value: titleBottom
+    }), React.createElement(RichText, {
+      key: "editable",
+      tagName: "p",
+      placeholder: "descripci\xF3n",
+      onChange: onChangeBodyBottom,
+      value: bodyBottom
+    })), React.createElement("div", {
+      className: "mblocks-right mblock",
+      style: {
+        backgroundImage: "url(".concat(imageBottom, ")"),
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }
+    })))];
+  },
+  save: function save(_ref4) {
+    var attributes = _ref4.attributes;
+    var titleTop = attributes.titleTop,
+        titleBottom = attributes.titleBottom,
+        bodyTop = attributes.bodyTop,
+        bodyBottom = attributes.bodyBottom,
+        imageTop = attributes.imageTop,
+        imageBottom = attributes.imageBottom;
+    return React.createElement("div", null, React.createElement("section", {
+      className: "ftco-section-2"
+    }, React.createElement("div", {
+      className: "container-fluid"
+    }, React.createElement("div", {
+      className: "section-2-blocks-wrapper row no-gutters"
+    }, React.createElement("div", {
+      className: "img col-sm-12 col-md-5",
+      style: {
+        backgroundImage: "url(".concat(imageTop, ")")
+      },
+      "data-aos": "fade-right"
+    }), React.createElement("div", {
+      className: "text col-md-6 col-lg-7 d-flex"
+    }, React.createElement("div", {
+      className: "text-inner align-self-center",
+      "data-aos": "fade-up"
+    }, React.createElement("h3", {
+      className: "top"
+    }, titleTop), React.createElement(RichText.Content, {
+      tagName: "p",
+      value: bodyTop,
+      className: "top"
+    })))))), React.createElement("section", {
+      className: "section-2-blocks-wrapper-2"
+    }, React.createElement("div", {
+      className: "container-fluid"
+    }, React.createElement("div", {
+      className: "section-2-blocks-wrapper row no-gutters d-flex",
+      style: {
+        background: "#fafafa"
+      }
+    }, React.createElement("div", {
+      className: "text col-md-5 col-lg-5 col-xl-4 ml-auto d-flex",
+      "data-aos": "fade-up"
+    }, React.createElement("div", {
+      className: "text-inner align-self-center mr-auto"
+    }, React.createElement("h3", {
+      className: "bottom"
+    }, titleBottom), React.createElement(RichText.Content, {
+      tagName: "p",
+      value: bodyBottom,
+      className: "bottom"
+    }))), React.createElement("div", {
+      className: "img col-md-5 no-gutters ml-auto"
+    }, React.createElement("div", {
+      className: "image",
+      style: {
+        backgroundImage: "url(".concat(imageBottom, ")")
+      },
+      "data-aos": "fade-left"
+    }))))));
+  }
+});
+
+/***/ }),
+
 /***/ "./assets/src/scripts/gutenberg.js":
 /*!*****************************************!*\
   !*** ./assets/src/scripts/gutenberg.js ***!
@@ -391,6 +644,8 @@ __webpack_require__(/*! ./blocks/cta.js */ "./assets/src/scripts/blocks/cta.js")
 __webpack_require__(/*! ./blocks/hero-phrase.js */ "./assets/src/scripts/blocks/hero-phrase.js");
 
 __webpack_require__(/*! ./blocks/latest-posts.js */ "./assets/src/scripts/blocks/latest-posts.js");
+
+__webpack_require__(/*! ./blocks/media-blocks */ "./assets/src/scripts/blocks/media-blocks.js");
 
 /***/ }),
 

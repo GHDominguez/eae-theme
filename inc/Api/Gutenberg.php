@@ -88,6 +88,13 @@ class Gutenberg
 			'editor_script' => 'gutenberg-eae', // Load script in the editor
 		) );
 
+		// Register custome meta tag for latest_post block
+		register_meta( 'post', 'latest_posts_meta_block_field', array(
+			'show_in_rest' => true,
+			'single' => true,
+			'type' => 'string',
+		) );
+
 		register_block_type( 'eae/latest-posts', array(
 			'editor_script'   => 'gutenberg-eae',
 			'render_callback' => array( $this, 'eae_render_block_latest_posts' ),
@@ -98,10 +105,15 @@ class Gutenberg
 				],
 			],
 		) );
+
+		register_block_type( 'eae/media-blocks', [
+			'editor_script' => 'gutenberg-eae',
+		] );
 	}
 
 	public function eae_render_block_latest_posts( $attr )
 	{
+		$title = get_post_meta( get_the_ID(), 'latest_posts_meta_block_field', true );
 		$posts = wp_get_recent_posts( array(
 			'numberposts' => 3,
 			'post_status' => 'publish',
@@ -145,7 +157,7 @@ class Gutenberg
 					<div class="row">%2$s</div>
 				</div>
 			</div>',
-			esc_html( 'Noticias' ),
+			esc_html( $title ),
 			$post_content
 		);
 	}
