@@ -1,1 +1,89 @@
-@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500);.cta-container{font-family:Rubik,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;min-height:360px;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;text-align:center;margin-bottom:20px;padding:10px}.cta-container .cta-overlay{position:absolute;top:0;left:0;width:100%;height:100%}.cta-container .cta-content{z-index:1;padding-left:1rem;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:left;width:100%;text-align:left;color:#fff}.cta-container .cta-content h2{margin-bottom:2em!important;line-height:1em;font-weight:300}.cta-container .cta-content p{line-height:1.5em;margin-bottom:0}.cta-container .cta-content .cta-content-button{width:100%;margin:10px 0}.cta-container .cta-content .cta-content-button a{cursor:pointer;color:#fff;padding:8px 12px;background-color:transparent;border:1px solid #fff;display:inline-block}.cta-container .cta-content .cta-content-button a:hover{background-color:#fff;color:#333}.hp-content{padding:1rem;font-family:Rubik,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-weight:300}
+@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500);.cta-container {
+  font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  min-height: 360px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.cta-container .cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.cta-container .cta-content {
+  z-index: 1;
+  padding-left: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  width: 100%;
+  text-align: left;
+  color: #fff;
+}
+.cta-container .cta-content h2 {
+  margin-bottom: 2em !important;
+  line-height: 1em;
+  font-weight: 300;
+}
+.cta-container .cta-content p {
+  line-height: 1.5em;
+  margin-bottom: 0;
+}
+.cta-container .cta-content .cta-content-button {
+  width: 100%;
+  margin: 10px 0;
+}
+.cta-container .cta-content .cta-content-button a {
+  cursor: pointer;
+  color: #fff;
+  padding: 8px 12px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  display: inline-block;
+}
+.cta-container .cta-content .cta-content-button a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.hp-content {
+  padding: 1rem;
+  font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 300;
+}
+
+.lp-container {
+  font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.lp-container .lp-title {
+  text-align: center;
+}
+.lp-container .lp-row {
+  display: flex;
+  flex-direction: row;
+  margin: -5px 0;
+}
+.lp-container .lp-row .lt-col-3 {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 250px;
+  background-color: gray;
+  margin: 10px;
+}
+.lp-container .lp-row .lt-col-3 .lt-heading {
+  color: white;
+  margin: 10px;
+  text-align: center;
+}

@@ -52,6 +52,4 @@
 			?>
 		</div>
 	</nav>
-
-	<!--<header class="ftco-cover" style="background-image: url(<?php echo esc_url( assets( 'images/bg.jpg' ) ); ?>);" id="section-home" data-aos="fade"  data-stellar-background-ratio="0.5">-->
 		

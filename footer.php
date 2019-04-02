@@ -17,7 +17,7 @@
 				<div class="col-md-12 text-center">
 
 					<p>
-						Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Hecho por <a href="https://hartgraf.com.ar" target="_blank" class="text-primary">Hartgraf</a>
+						Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Diseño web por <a href="https://hartgraf.com.ar" target="_blank" class="text-primary">Hartgraf</a>
 					</p>
 				</div>
 				<div class="col-md-4">

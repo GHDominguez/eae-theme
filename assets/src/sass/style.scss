@@ -495,7 +495,7 @@ textarea.form-control {
 
 .ftco-footer {
 	font-size: 16px;
-	background: $white;
+	background: $gray-900;
 	border-top: 1px solid #eeeeee;
 	padding: 8em 0;
 	.ftco-footer-logo {
@@ -508,10 +508,10 @@ textarea.form-control {
 		}
 	}
 	p {
-		color: rgba($black, .3);
+		color: $white;//rgba($black, .3);
 	}
 	a {
-		color: rgba($black, .3);
+		color: $white;//rgba($black, .3);
 		&:hover {
 			color: $primary;
 		}

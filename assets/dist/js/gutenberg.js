@@ -1,1 +1,409 @@
-!function(e){var t={};function a(n){if(t[n])return t[n].exports;var c=t[n]={i:n,l:!1,exports:{}};return e[n].call(c.exports,c,c.exports,a),c.l=!0,c.exports}a.m=e,a.c=t,a.d=function(e,t,n){a.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},a.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},a.t=function(e,t){if(1&t&&(e=a(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(a.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var c in e)a.d(n,c,function(t){return e[t]}.bind(null,c));return n},a.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return a.d(t,"a",t),t},a.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},a.p="/",a(a.s=1)}({1:function(e,t,a){e.exports=a("F+4m")},"5ZLW":function(e,t){var a=wp.blocks.registerBlockType,n=(wp.element.Fragment,wp.editor.RichText),c=wp.components;c.IconButton,c.RangeControl,c.PanelBody;a("gutenberg-eae/eae-hero-phrase",{title:"Frase destacada",icon:"format-quote",category:"layout",attributes:{phrase:{type:"string",source:"html",selector:"h1"}},edit:function(e){var t=e.attributes,a=e.className,c=e.setAttributes,o=t.phrase;return React.createElement("div",{class:"hp-content"},React.createElement(n,{key:"editable",tagName:"h3",className:a,style:{fontWeight:300},value:o,onChange:function(e){c({phrase:e})},placeholder:"Somos mas que una escuela..."}))},save:function(e){var t=e.attributes.phrase;return React.createElement("section",{className:"ftco-section",id:"section-about"},React.createElement("div",{className:"container"},React.createElement("div",{className:"row"},React.createElement("div",{className:"col-md-12  mb-5","data-aos":"fade-up"},React.createElement("h1",{className:"ftco-heading heading-thin mb-5"},t)))))}})},"F+4m":function(e,t,a){a("WpGq"),a("5ZLW"),a("c06k")},WpGq:function(e,t){var a=wp.blocks.registerBlockType,n=wp.editor,c=n.RichText,o=n.MediaUpload,r=n.BlockControls,l=n.InspectorControls,s=(n.getColorClass,wp.components),i=s.IconButton,u=s.PanelBody;a("gutenberg-awps/awps-cta",{title:"Encabezado grande",icon:"format-image",category:"layout",attributes:{title:{type:"string",source:"html",selector:"h1"},body:{type:"string",source:"html",selector:"h2"},backgroundImage:{type:"string",default:null}},edit:function(e){var t=e.attributes,a=e.className,n=e.setAttributes,s=t.title,d=t.body,m=t.backgroundImage;return[React.createElement(l,{style:{marginBottom:"40px"}},React.createElement(u,{title:"Background Image Settings"},React.createElement("p",null,React.createElement("strong",null,"Seleccionar una imagen de fondo:")),React.createElement(o,{onSelect:function(e){n({backgroundImage:e.sizes.full.url})},type:"image",value:m,render:function(e){var t=e.open;return React.createElement(i,{className:"editor-media-placeholder__button is-button is-default is-large",icon:"upload",onClick:t},"Imagen de Fondo")}}))),React.createElement("div",{className:"cta-container",style:{backgroundImage:"url(".concat(m,")"),backgroundSize:"cover",backgroundPosition:"center",backgroundRepeat:"no-repeat"}},React.createElement("div",{className:"cta-overlay",style:{background:"black",opacity:.3}}),React.createElement("div",{class:"cta-content"},React.createElement(c,{key:"editable",tagName:"h2",className:a,placeholder:"Título encabezado",onChange:function(e){n({title:e})},value:s,style:{color:"white"}}),React.createElement(r,null),React.createElement(c,{key:"editable",tagName:"p",className:a,placeholder:"Subtítulo encabezado",onChange:function(e){n({body:e})},value:d,style:{color:"white"}})))]},save:function(e){var t=e.attributes,a=t.title,n=t.body,o=t.backgroundImage;return React.createElement("header",{class:"ftco-cover",style:{backgroundImage:"url(".concat(o,")")},id:"section-home","data-aos":"fade","data-stellar-background-ratio":"0.5"},React.createElement("div",{class:"container"},React.createElement("div",{class:"row align-items-center ftco-vh-100"},React.createElement("div",{class:"col-md-7"},React.createElement("h1",{class:"ftco-heading mb-3","data-aos":"fade-up","data-aos-delay":"500"},a),React.createElement(c.Content,{tagName:"h2",className:"h5 ftco-subheading mb-5","data-aos":"fade-up","data-aos-delay":"600",value:n})))))}})},c06k:function(e,t){var a=wp.blocks.registerBlockType,n=wp.editor,c=(n.PlainText,n.RichText,n.MediaUpload,n.BlockControls,n.InspectorControls,n.ColorPalette,n.getColorClass,wp.components);c.IconButton,c.RangeControl,c.PanelBody;a("eae/latest-posts",{title:"Últimas Noticias",icon:"megaphone",category:"widgets",edit:(0,wp.data.withSelect)(function(e){return{posts:e("core").getEntityRecords("postType","post")}})(function(e){var t=e.posts,a=e.className;return t?0===t.length?"":React.createElement("div",{className:"row"},t.map(function(e){return React.createElement("div",{className:"col-md-6 col-lg-4","data-aos":"fade-up"},React.createElement("a",{href:e.link,className:"".concat(a," block-5"),style:{backgroundImage:"url(".concat(e._links["wp:attachment"][0].href,")")}},React.createElement("div",{className:"text"},React.createElement("h3",{className:"heading"},e.title.rendered),React.createElement("div",{className:"post-meta"},React.createElement("span",null,new Date(e.date).toLocaleDateString("es-AR",{year:"numeric",month:"long",day:"numeric"}))))))})):"Loading..."}),save:function(){return null}})}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./assets/src/scripts/blocks/cta.js":
+/*!******************************************!*\
+  !*** ./assets/src/scripts/blocks/cta.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var registerBlockType = wp.blocks.registerBlockType;
+var _wp$editor = wp.editor,
+    RichText = _wp$editor.RichText,
+    MediaUpload = _wp$editor.MediaUpload,
+    BlockControls = _wp$editor.BlockControls,
+    InspectorControls = _wp$editor.InspectorControls,
+    getColorClass = _wp$editor.getColorClass;
+var _wp$components = wp.components,
+    IconButton = _wp$components.IconButton,
+    PanelBody = _wp$components.PanelBody;
+registerBlockType("gutenberg-awps/awps-cta", {
+  title: "Encabezado grande",
+  icon: "format-image",
+  category: "layout",
+  attributes: {
+    title: {
+      type: "string",
+      source: "html",
+      selector: "h1"
+    },
+    body: {
+      type: "string",
+      source: "html",
+      selector: "h2"
+    },
+    backgroundImage: {
+      type: "string",
+      default: null
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        className = _ref.className,
+        setAttributes = _ref.setAttributes;
+    var title = attributes.title,
+        body = attributes.body,
+        backgroundImage = attributes.backgroundImage;
+
+    function onSelectImage(newImage) {
+      setAttributes({
+        backgroundImage: newImage.sizes.full.url
+      });
+    }
+
+    function onChangeBody(newBody) {
+      setAttributes({
+        body: newBody
+      });
+    }
+
+    function onChangeTitle(newTitle) {
+      setAttributes({
+        title: newTitle
+      });
+    }
+
+    return [React.createElement(InspectorControls, {
+      style: {
+        marginBottom: "40px"
+      }
+    }, React.createElement(PanelBody, {
+      title: "Background Image Settings"
+    }, React.createElement("p", null, React.createElement("strong", null, "Seleccionar una imagen de fondo:")), React.createElement(MediaUpload, {
+      onSelect: onSelectImage,
+      type: "image",
+      value: backgroundImage,
+      render: function render(_ref2) {
+        var open = _ref2.open;
+        return React.createElement(IconButton, {
+          className: "editor-media-placeholder__button is-button is-default is-large",
+          icon: "upload",
+          onClick: open
+        }, "Imagen de Fondo");
+      }
+    }))), React.createElement("div", {
+      className: "cta-container",
+      style: {
+        backgroundImage: "url(".concat(backgroundImage, ")"),
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }
+    }, React.createElement("div", {
+      className: "cta-overlay",
+      style: {
+        background: "black",
+        opacity: 0.3
+      }
+    }), React.createElement("div", {
+      class: "cta-content"
+    }, React.createElement(RichText, {
+      key: "editable",
+      tagName: "h2",
+      className: className,
+      placeholder: "T\xEDtulo encabezado",
+      onChange: onChangeTitle,
+      value: title,
+      style: {
+        color: "white"
+      }
+    }), React.createElement(BlockControls, null), React.createElement(RichText, {
+      key: "editable",
+      tagName: "p",
+      className: className,
+      placeholder: "Subt\xEDtulo encabezado",
+      onChange: onChangeBody,
+      value: body,
+      style: {
+        color: "white"
+      }
+    })))];
+  },
+  save: function save(_ref3) {
+    var attributes = _ref3.attributes;
+    var title = attributes.title,
+        body = attributes.body,
+        backgroundImage = attributes.backgroundImage;
+    return React.createElement("header", {
+      class: "ftco-cover",
+      style: {
+        backgroundImage: "url(".concat(backgroundImage, ")")
+      },
+      id: "section-home",
+      "data-aos": "fade",
+      "data-stellar-background-ratio": "0.5"
+    }, React.createElement("div", {
+      class: "container"
+    }, React.createElement("div", {
+      class: "row align-items-center ftco-vh-100"
+    }, React.createElement("div", {
+      class: "col-md-7"
+    }, React.createElement("h1", {
+      class: "ftco-heading mb-3",
+      "data-aos": "fade-up",
+      "data-aos-delay": "500"
+    }, title), React.createElement(RichText.Content, {
+      tagName: "h2",
+      className: "h5 ftco-subheading mb-5",
+      "data-aos": "fade-up",
+      "data-aos-delay": "600",
+      value: body
+    })))));
+  }
+});
+
+/***/ }),
+
+/***/ "./assets/src/scripts/blocks/hero-phrase.js":
+/*!**************************************************!*\
+  !*** ./assets/src/scripts/blocks/hero-phrase.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var registerBlockType = wp.blocks.registerBlockType;
+var Fragment = wp.element.Fragment;
+var RichText = wp.editor.RichText;
+var _wp$components = wp.components,
+    IconButton = _wp$components.IconButton,
+    RangeControl = _wp$components.RangeControl,
+    PanelBody = _wp$components.PanelBody;
+registerBlockType("gutenberg-eae/eae-hero-phrase", {
+  title: "Frase destacada",
+  icon: "format-quote",
+  category: "layout",
+  attributes: {
+    phrase: {
+      type: "string",
+      source: "html",
+      selector: "h1"
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        className = _ref.className,
+        setAttributes = _ref.setAttributes;
+    var phrase = attributes.phrase;
+
+    function onChangePhrase(newPhrase) {
+      setAttributes({
+        phrase: newPhrase
+      });
+    }
+
+    return React.createElement("div", {
+      class: "hp-content"
+    }, React.createElement(RichText, {
+      key: "editable",
+      tagName: "h3",
+      className: className,
+      style: {
+        fontWeight: 300
+      },
+      value: phrase,
+      onChange: onChangePhrase,
+      placeholder: "Somos mas que una escuela..."
+    }));
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    var phrase = attributes.phrase;
+    return React.createElement("section", {
+      className: "ftco-section",
+      id: "section-about"
+    }, React.createElement("div", {
+      className: "container"
+    }, React.createElement("div", {
+      className: "row"
+    }, React.createElement("div", {
+      className: "col-md-12  mb-5",
+      "data-aos": "fade-up"
+    }, React.createElement("h1", {
+      className: "ftco-heading heading-thin mb-5"
+    }, phrase)))));
+  }
+});
+
+/***/ }),
+
+/***/ "./assets/src/scripts/blocks/latest-posts.js":
+/*!***************************************************!*\
+  !*** ./assets/src/scripts/blocks/latest-posts.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var registerBlockType = wp.blocks.registerBlockType;
+var RichText = wp.editor.RichText;
+registerBlockType("eae/latest-posts", {
+  title: "Últimas Noticias",
+  icon: "megaphone",
+  category: "widgets",
+  attributes: {
+    title: {
+      type: "string"
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        className = _ref.className,
+        setAttributes = _ref.setAttributes;
+    console.log(attributes);
+    var title = attributes.title;
+
+    function onChangeTitle(newTitle) {
+      setAttributes({
+        title: newTitle
+      });
+    }
+
+    return React.createElement("div", {
+      className: "lp-container ".concat(className)
+    }, React.createElement("h3", {
+      className: "lp-title"
+    }, "Noticias"), React.createElement("div", {
+      className: "lp-row"
+    }, React.createElement("div", {
+      className: "lt-col-3"
+    }, React.createElement("h4", {
+      className: "lt-heading"
+    }, "Titulo")), React.createElement("div", {
+      className: "lt-col-3"
+    }, React.createElement("h4", {
+      className: "lt-heading"
+    }, "Titulo")), React.createElement("div", {
+      className: "lt-col-3"
+    }, React.createElement("h4", {
+      className: "lt-heading"
+    }, "Titulo"))));
+  },
+  // edit: withSelect(select => {
+  //   return {
+  //     posts: select("core").getEntityRecords("postType", "post")
+  //   };
+  // })(LatestPostEdit),
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return null;
+  }
+});
+
+/***/ }),
+
+/***/ "./assets/src/scripts/gutenberg.js":
+/*!*****************************************!*\
+  !*** ./assets/src/scripts/gutenberg.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Import your Gutenberg custom blocks here
+ */
+__webpack_require__(/*! ./blocks/cta.js */ "./assets/src/scripts/blocks/cta.js");
+
+__webpack_require__(/*! ./blocks/hero-phrase.js */ "./assets/src/scripts/blocks/hero-phrase.js");
+
+__webpack_require__(/*! ./blocks/latest-posts.js */ "./assets/src/scripts/blocks/latest-posts.js");
+
+/***/ }),
+
+/***/ 1:
+/*!***********************************************!*\
+  !*** multi ./assets/src/scripts/gutenberg.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /home/gasher/code/eae/wp-content/themes/eae/assets/src/scripts/gutenberg.js */"./assets/src/scripts/gutenberg.js");
+
+
+/***/ })
+
+/******/ });

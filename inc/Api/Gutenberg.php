@@ -89,27 +89,65 @@ class Gutenberg
 		) );
 
 		register_block_type( 'eae/latest-posts', array(
+			'editor_script'   => 'gutenberg-eae',
 			'render_callback' => array( $this, 'eae_render_block_latest_posts' ),
+			'attributes'      => [
+				'title' => [
+					'default' => 'N',
+					'type'    => 'string'
+				],
+			],
 		) );
 	}
 
-	public function eae_render_block_latest_posts( $attr, $content )
+	public function eae_render_block_latest_posts( $attr )
 	{
-		dd($attr, $content);
-		// $recent_posts = wp_get_recent_posts( array(
-		// 	'numberposts' => 1,
-		// 	'post_status' => 'publish',
-		// ) );
-		// if ( count( $recent_posts ) === 0 ) {
-		// 	return 'No posts';
-		// }
-		// $post = $recent_posts[ 0 ];
-		// $post_id = $post[ 'ID' ];
-		// return sprintf(
-		// 	'<a class="wp-block-awps-latest-post" href="%1$s">%2$s</a>',
-		// 	esc_url( get_permalink( $post_id ) ),
-		// 	esc_html( get_the_title( $post_id ) )
-		// );
+		$posts = wp_get_recent_posts( array(
+			'numberposts' => 3,
+			'post_status' => 'publish',
+		) );
+		if ( count( $posts ) === 0 ) {
+			return 'No posts';
+		}
+		$post_content = '';
+
+		foreach ($posts as $post) {
+			$post_id = $post[ 'ID' ];
+			$post_content .= sprintf(
+				'<div class="col-md-6 col-lg-4" data-aos="fade-up">
+					<a href="%1$s" class="block-5" style="background-image: url(\'%4$s\');">
+						<div class="text w-100">
+						<!--<div class="subheading"></div> <!-- Para categoria -->
+						<h3 class="heading">%2$s</h3>
+						<div class="post-meta">
+							<span>&nbsp;</span>
+							<span>%3$s</span>
+						</div>
+						</div>
+					</a>
+				</div>',
+				esc_url( get_permalink( $post_id ) ),
+				esc_html( get_the_title( $post_id ) ),
+				esc_html( get_the_date( '', $post_id ) ),
+				esc_url( get_the_post_thumbnail_url( $post_id ) )
+			);
+		}
+
+		 return sprintf('
+			<div class="ftco-section bg-light">
+				<div class="container">
+					<div class="row justify-content-center mb-5 pb-5">
+						<div class="col-md-7 text-center"  data-aos="fade-up">
+							<h2>%1$s</h2>
+						</div>
+					</div>
+
+					<div class="row">%2$s</div>
+				</div>
+			</div>',
+			esc_html( 'Noticias' ),
+			$post_content
+		);
 	}
 
 	/**
