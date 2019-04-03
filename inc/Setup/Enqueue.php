@@ -37,9 +37,9 @@ class Enqueue
 		wp_enqueue_script( 'main', mix('js/app.js'), array(), '1.0.0', true );
 
 		// Activate browser-sync on development environment
-		if ( getenv( 'APP_ENV' ) === 'development' ) :
-			wp_enqueue_script( '__bs_script__', getenv('WP_SITEURL') . ':3000/browser-sync/browser-sync-client.js', array(), null, true );
-		endif;
+		// if ( getenv( 'APP_ENV' ) === 'development' ) :
+		// 	wp_enqueue_script( '__bs_script__', getenv('WP_SITEURL') . ':3000/browser-sync/browser-sync-client.js', array(), null, true );
+		// endif;
 
 		// Extra
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

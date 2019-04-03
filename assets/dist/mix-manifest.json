@@ -1,9 +1,9 @@
 {
-    "/js/admin.js": "/js/admin.js",
-    "/css/style.css": "/css/style.css",
-    "/css/admin.css": "/css/admin.css",
-    "/css/gutenberg.css": "/css/gutenberg.css",
-    "/js/gutenberg.js": "/js/gutenberg.js",
-    "/js/vendor.js": "/js/vendor.js",
-    "/js/app.js": "/js/app.js"
+    "/js/admin.js": "/js/admin.js?id=afada69faeb51d682dc9",
+    "/css/style.css": "/css/style.css?id=483e080f794880784474",
+    "/css/admin.css": "/css/admin.css?id=178b9ccc9af751ac391c",
+    "/css/gutenberg.css": "/css/gutenberg.css?id=0e60ca44a079820c3a3b",
+    "/js/gutenberg.js": "/js/gutenberg.js?id=87ef98c756a79fc796cb",
+    "/js/vendor.js": "/js/vendor.js?id=74878bd298ffd4380343",
+    "/js/app.js": "/js/app.js?id=4f188253764b7d85d058"
 }
