@@ -9,4 +9,16 @@
 
 ?>
 
+<header class="ftco-cover" style="background-image: url('<?php the_post_thumbnail_url('full') ?>'); background-color: #898953" id="section-home" data-aos="fade"  data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row align-items-center ftco-vh-75">
+            <div class="col-md-7">
+                <h1 class="ftco-heading mb-3" data-aos="fade-up" data-aos-delay="500"><?php the_title(); ?></h1>
+                <h2 class="h5 ftco-subheading mb-5" data-aos="fade-up"  data-aos-delay="600"><?php the_excerpt(); ?></h2>    
+            </div>
+        </div>
+    </div>
+</header>
+<!-- END section -->
+
 <?php the_content(); ?>
