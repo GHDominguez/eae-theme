@@ -1,3 +1,7 @@
+require("./bootstrap");
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 AOS.init({
   duration: 800,
   easing: "slide"
@@ -16,14 +20,14 @@ $(document).ready(function($) {
   });
 
   // loader
-  var loader = function() {
+  (function() {
     setTimeout(function() {
       if ($("#ftco-loader").length > 0) {
         $("#ftco-loader").removeClass("show");
       }
     }, 1);
-  };
-  loader();
+  })();
+  // loader();
 
   var carousel = function() {
     $(".carousel").owlCarousel({
