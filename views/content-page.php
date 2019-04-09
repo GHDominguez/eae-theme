@@ -9,7 +9,7 @@
 
 ?>
 
-<header class="ftco-cover" style="background-image: url('<?php the_post_thumbnail_url('full') ?>'); background-color: #898953" id="section-home" data-aos="fade"  data-stellar-background-ratio="0.5">
+<header class="ftco-cover site-header" style="background-image: url('<?php the_post_thumbnail_url('full') ?>');" id="section-home" data-aos="fade"  data-stellar-background-ratio="0.5">
     <div class="container">
         <div class="row align-items-center ftco-vh-75">
             <div class="col-md-7">

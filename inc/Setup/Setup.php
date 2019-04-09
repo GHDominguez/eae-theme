@@ -42,10 +42,10 @@ class Setup
             'caption',
         ) );
 
-        add_theme_support( 'custom-background', apply_filters( 'awps_custom_background_args', array(
-            'default-color' => 'ffffff',
-            'default-image' => '',
-        ) ) );
+        // add_theme_support( 'custom-background', apply_filters( 'awps_custom_background_args', array(
+        //     'default-color' => 'ffffff',
+        //     'default-image' => '',
+        // ) ) );
 
         /*
          * Activate Post formats if you need

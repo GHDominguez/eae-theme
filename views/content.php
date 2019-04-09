@@ -22,7 +22,7 @@
 		?>
 				<div class="entry-meta">
 					<?php
-					Awps\Core\Tags::posted_on();
+					// Awps\Core\Tags::posted_on();
 					?>
 				</div><!-- .entry-meta -->
 		<?php
