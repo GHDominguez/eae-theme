@@ -7,19 +7,15 @@
  * @package awps
  */
 
-if ( ! is_active_sidebar( 'awps-sidebar' ) ) :
+if ( ! is_active_sidebar( 'eae-sidebar' ) ) :
 	return;
 endif;
 ?>
 
 <?php
 if ( is_customize_preview() ) {
-	echo '<div id="awps-sidebar-control"></div>';
+	echo '<div id="eae-sidebar-control"></div>';
 }
+dynamic_sidebar( 'eae-sidebar' );
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary">
-	<?php
-	dynamic_sidebar( 'awps-sidebar' );
-	?>
-</aside><!-- #secondary -->
