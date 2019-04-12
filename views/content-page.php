@@ -35,5 +35,3 @@
 		</div>
 	</div>
 </div>
-
-<?php the_content(); ?>
