@@ -15,8 +15,8 @@ while ( have_posts() ) :
 	// get_template_part( 'views/content', get_post_format() );
 	// the_post_navigation(); ?>
 
-<header class="ftco-cover site-header single-post-header" id="section-home" data-aos="fade"  data-stellar-background-ratio="0.5"
-	style="background-image: url(<?php the_post_thumbnail_url('full'); ?>); background-blend-mode: overlay;">
+<header class="ftco-cover single-post-header" id="section-home" data-aos="fade"  data-stellar-background-ratio="0.5"
+	style="background-image: url(<?php the_post_thumbnail_url('full'); ?>);">
 	<div class="container">
 		<div class="row align-items-center ftco-vh-75">
 			<div class="col-md-7">
@@ -34,12 +34,6 @@ while ( have_posts() ) :
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<!-- <?php if( has_post_thumbnail() ): ?>
-				<p>
-					<?php the_post_thumbnail('full', ['class' => 'img-fluid']); ?>
-				</p>
-				<?php endif; ?> -->
-
 				<?php the_content(); ?>
 			</div>
 

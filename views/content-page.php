@@ -21,4 +21,19 @@
 </header>
 <!-- END section -->
 
+<div class="ftco-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<?php the_content(); ?>
+			</div>
+
+			<div class="col-sm-4 sidebar">
+				<?php get_sidebar(); ?>
+			</div>
+
+		</div>
+	</div>
+</div>
+
 <?php the_content(); ?>
