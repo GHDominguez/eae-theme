@@ -119,7 +119,7 @@ class Header
 	{
 		echo '<style type="text/css">';
 			echo Customizer::css( '.site-header', 'background-color', 'awps_header_background_color' );
-			echo sprintf('.single-post-header{ background-image: url("%s"); }', get_theme_mod('awps_header_background_posts_image'));
+			echo sprintf('.posts-header{ background-image: url("%s"); }', get_theme_mod('awps_header_background_posts_image'));
 			// echo Customizer::css( '.site-header', 'color', 'awps_header_text_color' );
 			// echo Customizer::css( '.site-header a', 'color', 'awps_header_link_color' );
 		echo '</style>';

@@ -65,7 +65,7 @@ class Customizer
 			// echo self::css( '#sidebar', 'background-color', 'awps_sidebar_background_color' );
 			// echo self::css( '.site-footer', 'background-color', 'awps_footer_background_color' );
 			echo self::css( '.site-header', 'background-color', 'awps_header_background_color' );
-			echo sprintf('.single-post-header{ background-image: url("%s"); }', get_theme_mod('awps_header_background_posts_image'));
+			echo sprintf('.posts-header{ background-image: url("%s"); }', get_theme_mod('awps_header_background_posts_image'));
 			// echo self::css( '.site-header', 'color', 'awps_header_text_color' );
 			// echo self::css( '.site-header a', 'color', 'awps_header_link_color' );
 		echo '</style><!--/Customizer CSS-->';
