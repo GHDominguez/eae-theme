@@ -59,7 +59,7 @@ get_header(); ?>
 							</li>
 						<?php endfor; ?>
 
-						<li class="page-item next"><a class="page-link" href="<?php echo get_next_posts_page_link() ?>">&raquo</a></li>
+						<li class="page-item next"><a class="page-link" href="<?php echo get_next_posts_page_link() ?>">&raquo;</a></li>
 
 					</ul>
 				</div>

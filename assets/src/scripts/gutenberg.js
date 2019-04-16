@@ -1,7 +1,8 @@
 /**
  * Import your Gutenberg custom blocks here
  */
-require("./blocks/cta.js");
-require("./blocks/hero-phrase.js");
-require("./blocks/latest-posts.js");
+require("./blocks/cta");
+require("./blocks/hero-phrase");
+require("./blocks/latest-posts");
 require("./blocks/media-blocks");
+require("./blocks/gallery");

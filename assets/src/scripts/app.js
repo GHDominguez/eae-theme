@@ -55,17 +55,17 @@ $(document).ready(function($) {
 
     $(".nonloop").owlCarousel({
       center: true,
-      items: 2,
+      items: 1,
       loop: false,
       margin: 10,
       nav: true,
       navText: [
-        '<span class="icon-arrow_back">',
-        '<span class="icon-arrow_forward">'
+        '<span class="icon-arrow_back">&laquo;</span>',
+        '<span class="icon-arrow_forward">&raquo;</span>'
       ],
       responsive: {
         600: {
-          items: 2
+          items: 1.5
         }
       }
     });

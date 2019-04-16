@@ -3,6 +3,9 @@
 
 // Animate
 @import '~animate.css/animate.css';
+// Owl Carousel
+@import '~owl.carousel/dist/assets/owl.carousel.css';
+@import '~owl.carousel/dist/assets/owl.theme.default.css';
 
 @import '~bootstrap/scss/functions';
 // Variables
@@ -135,7 +138,7 @@ h1, h2, h3, h4, h5,
 		left: 0;
 		top: 0;
 		margin-top: -130px;
-		background: $white!important;
+		background: $gray-900!important;
 		box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
 		.nav-item {
 			&.active {
@@ -176,7 +179,7 @@ h1, h2, h3, h4, h5,
 		.nav-link {
 			padding-top: .9rem!important;
 			padding-bottom: .9rem!important;
-			color: $black!important;
+			color: $white!important;
 			&.active {
 				color: $primary!important;
 			}
@@ -190,7 +193,7 @@ h1, h2, h3, h4, h5,
 		}
 
 		.navbar-brand {
-			color: $black;
+			color: $white;
 		}
 
 	}

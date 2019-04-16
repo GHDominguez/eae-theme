@@ -109,6 +109,10 @@ class Gutenberg
 		register_block_type( 'eae/media-blocks', [
 			'editor_script' => 'gutenberg-eae',
 		] );
+
+		register_block_type( 'eae/gallery', [
+			'editor_script' => 'gutenberg-eae',
+		] );
 	}
 
 	public function eae_render_block_latest_posts( $attr )
