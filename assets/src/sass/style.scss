@@ -214,9 +214,9 @@ h1, h2, h3, h4, h5,
   // background: lighten( $black, 10%);
 	@extend .bg-image;
 	
-	&.single-post-header, &.posts-header {
+	&.single-post-header {
 		background-blend-mode: overlay;
-		background-color: $gray-900;
+		background-color: $gray-700;
 	}  
 
   background-position: center center;

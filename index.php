@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-<header class="ftco-cover site-header posts-header" id="section-home" data-aos="fade"  data-stellar-background-ratio="0.5">
+<header class="ftco-cover site-header posts-header" id="section-home" data-aos="fade" data-stellar-background-ratio="0.5">
     <div class="container">
         <div class="row align-items-center ftco-vh-75">
             <div class="col-md-7">

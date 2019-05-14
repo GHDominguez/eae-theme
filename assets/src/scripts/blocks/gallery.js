@@ -139,7 +139,7 @@ registerBlockType("eae/gallery", {
     const imagesParsed = images.map(img => JSON.parse(img));
 
     return (
-      <div>
+      <div class="ftco-section">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-7 text-center mb-5 pb-5">
