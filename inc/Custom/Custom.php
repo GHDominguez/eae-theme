@@ -46,6 +46,25 @@ class Custom
 				'hierarchical' => false,
 				'show_in_rest' => true,
 			),
+			array(
+				'slug' => 'instalacion',
+				'singular' => 'Instalación',
+				'plural'  => 'Instalaciones',
+				'menu_icon' => 'dashicons-building',
+				'menu_position' => 19,
+				'text_domain' => 'eae',
+				'supports' => array( 'title', 'thumbnail' ),
+				'description' => 'Instalaciones Custom Post Type',
+				'public' => true,
+				'publicly_queryable' => true,
+				'show_ui' => true,
+				'show_in_menu' => true,
+				'query_var' => true,
+				'capability_type' => 'post',
+				'has_archive' => true,
+				'hierarchical' => false,
+				'show_in_rest' => true,
+			),
 		);
 
 		foreach ( $custom_posts as $custom_post ) {
