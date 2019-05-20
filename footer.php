@@ -14,20 +14,37 @@
 <footer class="ftco-footer ftco-bg-dark ftco-section">
     <div class="container">
 			<div class="row mb-8">
+				<div class="col-md-12">
+          <div class="ftco-footer-widget mb-4">
+            <ul class="ftco-footer-social list-unstyled text-center">
+							<?php if (esc_attr( get_option( 'facebook' ) )): ?>
+              	<li class="">
+									<a href="<?php echo esc_attr( get_option( 'facebook' ) ) ?>" target="_blank"><span class="fab fa-facebook-f icon-facebook"></span></a>
+								</li>
+							<?php endif; ?>
+							<?php if (esc_attr( get_option( 'instagram' ) )): ?>
+              	<li class="">
+									<a href="<?php echo esc_attr( get_option( 'instagram' ) ) ?>" target="_blank"><span class="fab fa-instagram icon-facebook"></span></a>
+								</li>
+							<?php endif; ?>
+							<?php if (esc_attr( get_option( 'twitter' ) )): ?>
+              	<li class="">
+									<a href="<?php echo esc_attr( get_option( 'twitter' ) ) ?>" target="_blank"><span class="fab fa-twitter icon-facebook"></span></a>
+								</li>
+							<?php endif; ?>
+							<?php if (esc_attr( get_option( 'youtube' ) )): ?>
+              	<li class="">
+									<a href="<?php echo esc_attr( get_option( 'youtube' ) ) ?>" target="_blank"><span class="fab fa-youtube icon-facebook"></span></a>
+								</li>
+							<?php endif; ?>
+            </ul>
+          </div>
+        </div>
 				<div class="col-md-12 text-center">
 
 					<p>
 						Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Diseño web por <a href="https://hartgraf.com.ar" target="_blank" class="text-primary">Hartgraf</a>
 					</p>
-				</div>
-				<div class="col-md-4">
-					<div class="ftco-footer-widget mb-4">
-						<ul class="ftco-footer-social list-unstyled float-md-right float-lft">
-							<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-							<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-							<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-						</ul>
-					</div>
 				</div>
 			</div>
     </div>

@@ -41,7 +41,7 @@ class Admin
 	{
 		$this->enqueue()->pages()->settings()->sections()->fields()->register_settings();
 
-		$this->enqueue_faq( new Settings() );
+		// $this->enqueue_faq( new Settings() );
 	}
 
 	/**
@@ -72,7 +72,7 @@ class Admin
 		);
 
 		// Pages array to where enqueue scripts
-		$pages = array( 'toplevel_page_awps' );
+		$pages = array( 'toplevel_page_eae' );
 
 		// Enqueue files in Admin area
 		$this->settings->admin_enqueue( $scripts, $pages );
@@ -95,7 +95,7 @@ class Admin
 		);
 
 		// Pages array to where enqueue scripts
-		$pages = array( 'awps_page_awps_faq' );
+		$pages = array( 'eae_page_eae_faq' );
 
 		// Enqueue files in Admin area
 		$settings->admin_enqueue( $scripts, $pages )->register();
@@ -109,29 +109,29 @@ class Admin
 	{
 		$admin_pages = array(
 			array(
-				'page_title' => 'AWPS Admin Page',
-				'menu_title' => 'AWPS',
+				'page_title' => 'Opciones',
+				'menu_title' => 'EAE',
 				'capability' => 'manage_options',
-				'menu_slug' => 'awps',
+				'menu_slug' => 'eae',
 				'callback' => array( $this->callback, 'admin_index' ),
-				'icon_url' => get_template_directory_uri() . '/assets/dist/images/admin-icon.png',
+				'icon_url' => get_template_directory_uri() . '/assets/dist/images/eae-icon-16.png',
 				'position' => 110,
 			)
 		);
 
 		$admin_subpages = array(
 			array(
-				'parent_slug' => 'awps',
-				'page_title' => 'Awps FAQ',
+				'parent_slug' => 'eae',
+				'page_title' => 'eae FAQ',
 				'menu_title' => 'FAQ',
 				'capability' => 'manage_options',
-				'menu_slug' => 'awps_faq',
+				'menu_slug' => 'eae_faq',
 				'callback' => array( $this->callback, 'admin_faq' )
 			)
 		);
 
 		// Create multiple Admin menu pages and subpages
-		$this->settings->addPages( $admin_pages )->withSubPage( 'Settings' )->addSubPages( $admin_subpages );
+		$this->settings->addPages( $admin_pages )->withSubPage( 'Opciones' );//->addSubPages( $admin_subpages );
 
 		return $this;
 	}
@@ -145,14 +145,22 @@ class Admin
 		// Register settings
 		$args = array(
 			array(
-				'option_group' => 'awps_options_group',
-				'option_name' => 'first_name',
-				'callback' => array( $this->callback, 'awps_options_group' )
+				'option_group' => 'eae_social_options_group',
+				'option_name' => 'facebook',
+				// 'callback' => array( $this->callback, 'eae_options_group' )
 			),
 			array(
-				'option_group' => 'awps_options_group',
-				'option_name' => 'awps_test2'
-			)
+				'option_group' => 'eae_social_options_group',
+				'option_name' => 'instagram'
+			),
+			array(
+				'option_group' => 'eae_social_options_group',
+				'option_name' => 'twitter',
+			),
+			array(
+				'option_group' => 'eae_social_options_group',
+				'option_name' => 'youtube',
+			),
 		);
 
 		$this->settings->add_settings( $args );
@@ -169,10 +177,10 @@ class Admin
 		// Register sections
 		$args = array(
 			array(
-				'id' => 'awps_admin_index',
-				'title' => 'Settings',
-				'callback' => array( $this->callback, 'awps_admin_index' ),
-				'page' => 'awps'
+				'id' => 'eae_admin_index',
+				'title' => 'Redes Sociales',
+				'callback' => array( $this->callback, 'eae_admin_index' ),
+				'page' => 'eae'
 			)
 		);
 
@@ -189,17 +197,50 @@ class Admin
 	{
 		// Register fields
 		$args = array(
-			array(
-				'id' => 'first_name',
-				'title' => 'First Name',
-				'callback' => array( $this->callback, 'first_name' ),
-				'page' => 'awps',
-				'section' => 'awps_admin_index',
+			[
+				'id' => 'facebook',
+				'title' => 'Facebook',
+				'callback' => array( $this->callback, 'facebook' ),
+				'page' => 'eae',
+				'section' => 'eae_admin_index',
 				'args' => array(
-					'label_for' => 'first_name',
+					'label_for' => 'facebook',
 					'class' => ''
 				)
-			)
+			],
+			[
+				'id' => 'instagram',
+				'title' => 'Instagram',
+				'callback' => array( $this->callback, 'instagram' ),
+				'page' => 'eae',
+				'section' => 'eae_admin_index',
+				'args' => array(
+					'label_for' => 'instagram',
+					'class' => ''
+				)
+			],
+			[
+				'id' => 'twitter',
+				'title' => 'Twitter',
+				'callback' => array( $this->callback, 'twitter' ),
+				'page' => 'eae',
+				'section' => 'eae_admin_index',
+				'args' => array(
+					'label_for' => 'twitter',
+					'class' => ''
+				)
+			],
+			[
+				'id' => 'youtube',
+				'title' => 'Youtube',
+				'callback' => array( $this->callback, 'youtube' ),
+				'page' => 'eae',
+				'section' => 'eae_admin_index',
+				'args' => array(
+					'label_for' => 'youtube',
+					'class' => ''
+				)
+			]
 		);
 
 		$this->settings->add_fields( $args );

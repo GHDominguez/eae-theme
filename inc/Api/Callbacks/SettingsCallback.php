@@ -22,19 +22,37 @@ class SettingsCallback
 		echo '<div class="wrap"><h1>FAQ Page</h1></div>';
 	}
 
-	public function awps_options_group( $input ) 
+	public function eae_options_group( $input ) 
 	{
 		return $input;
 	}
 
-	public function awps_admin_index() 
+	public function eae_admin_index() 
 	{
-		echo 'Customize this Theme Settings section and add description and instructions';
+		echo 'Ingrese las direcciones de las redes sociales de la Institución.';
 	}
 
-	public function first_name()
+	public function facebook()
 	{
-		$first_name = esc_attr( get_option( 'first_name' ) );
-		echo '<input type="text" class="regular-text" name="first_name" value="'.$first_name.'" placeholder="First Name" />';
+		$facebook = esc_attr( get_option( 'facebook' ) );
+		echo '<input type="text" class="regular-text" name="facebook" value="'.$facebook.'" placeholder="Url de Facebook" />';
+	}
+
+	public function instagram()
+	{
+		$instagram = esc_attr( get_option( 'instagram' ) );
+		echo '<input type="text" class="regular-text" name="instagram" value="'.$instagram.'" placeholder="Url de Instagram" />';
+	}
+
+	public function twitter()
+	{
+		$twitter = esc_attr( get_option( 'twitter' ) );
+		echo '<input type="text" class="regular-text" name="twitter" value="'.$twitter.'" placeholder="Url de Twitter" />';
+	}
+
+	public function youtube()
+	{
+		$youtube = esc_attr( get_option( 'youtube' ) );
+		echo '<input type="text" class="regular-text" name="youtube" value="'.$youtube.'" placeholder="Url de Youtube" />';
 	}
 }
